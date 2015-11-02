@@ -91,8 +91,6 @@ async.waterfall([
                 var availabilityTotal = body.data.total;
                 var maxperTweet = body.data.maxperTweet;
                 var instanceNum = Math.ceil(words.length / maxperTweet);
-
-                console.log(words.length, availabilityTotal, maxperTweet, instanceNum);
                 cb(null,availabilityTotal,instanceNum);
             }
         });
