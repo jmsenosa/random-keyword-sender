@@ -9,7 +9,7 @@ function isInArray(value, array) {
 
 var words = new Array();
 
-for(var i = 0; i < 20; i++){
+for(var i = 0; i < 500; i++){
     var adjective = faker.hacker.adjective();
 
     if(isInArray(adjective, words)) {
@@ -91,6 +91,8 @@ async.waterfall([
                 var availabilityTotal = body.data.total;
                 var maxperTweet = body.data.maxperTweet;
                 var instanceNum = Math.ceil(words.length / maxperTweet);
+
+                console.log(words.length, availabilityTotal, maxperTweet, instanceNum);
                 cb(null,availabilityTotal,instanceNum);
             }
         });
